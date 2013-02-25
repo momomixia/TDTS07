@@ -1,0 +1,13 @@
+#include <fstream>
+using std::ofstream;
+
+int main(void){
+  bool  WE = WE_green_light->read();
+  *out << "WE green light(" << sc_time_stamp() << ") = " << WE << '\t';
+  bool  EW = EW_green_light->read();
+  *out << "EW green light(" << sc_time_stamp() << ") = " << EW << '\t';
+  bool  NS = NS_green_light->read();
+  *out << "NS green light(" << sc_time_stamp() << ") = " << NS << '\t';
+  bool  SN = SN_green_light->read();
+  *out << "SN green light(" << sc_time_stamp() << ") = " << SN << endl;
+}

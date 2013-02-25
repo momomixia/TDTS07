@@ -12,5 +12,25 @@
 \author{Nora Björklund and Christopher Hallberg}
 \begin{document}
 \maketitle
-\section{lalalallalala}
+\section{Trafficlight}
+The traffic light consists of four sensors which are connected to a
+controller that can at the right moment give a green signal on a
+light where a car is waiting. The cars are generated from an input
+file which is read by the car generator,input_gen, and which car is
+granted green light is read by the monitor that writes to an output
+file.
+\subsection{input_gen}
+The input generator simply reads a text document and inputs cars from
+north, south, east or west.
+\subsection{sensor}
+The sensor detects when a car have arrived at its trafficlight and
+sends a signal to the controller that it has a car waiting.
+\subsection{controller}
+
+\subsection{monitor}
+\section{Tests}
+To verify that our traffic light is correct two different simulations
+have been executed. One to verify that every car is granted passage
+and one to see that a single car from one direction can dissapear when
+many arrives from another.  
 \end{document}
