@@ -16,10 +16,10 @@
 The traffic light consists of four sensors which are connected to a
 controller that can at the right moment give a green signal on a
 light where a car is waiting. The cars are generated from an input
-file which is read by the car generator, input_gen. Which car is
+file which is read by the car generator, input\_gen. Which car is
 granted green light is read by the monitor that writes to an output
 file.
-\subsection{input_gen}
+\subsection{input\_gen}
 The input generator simply reads a text document and inputs cars from
 north, south, east or west. The format of the input file is the
 letters W, E, S, or N followed by a space and then a time value in
@@ -31,10 +31,10 @@ one will be generated.
 The sensor detects when a car have arrived at its trafficlight and
 sends a signal to the controller that it has a car waiting. There is
 one sensor per direction.
-The sensors has an SC_THREAD with a loop checking if there is a new
+The sensors has an SC\_THREAD with a loop checking if there is a new
 car every 50 millisecond, any signal shorter than that is considered a
 glitch. If it detects a new car it raises an event
-which is detected by an SC_METHOD. This method inverts an internal
+which is detected by an SC\_METHOD. This method inverts an internal
 signal and puts it on the output for the controller. That is, both
 falling and rising edge of the signal between the sensors and
 controller indicates a new car.
@@ -42,7 +42,7 @@ controller indicates a new car.
 The controller is the unit which decides what directions should be
 green. It is connected to the four sensors from which it receives
 signals telling it if new cars have arrived. There are four
-SC_METHODs, one for each direction, which are sensitive to signals
+SC\_METHODs, one for each direction, which are sensitive to signals
 from the respective sensors. When a car is detected by a method a
 variable is set to indicate that a car is waiting at a specific light.
 
