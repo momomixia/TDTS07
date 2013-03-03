@@ -12,6 +12,7 @@ sensor::sensor(sc_module_name name)
   sensitive << new_car;
 }
 
+// Checks for new cars
 void sensor::new_car_pulse()
 {
   for(;;){// Kommer bil?
@@ -22,7 +23,8 @@ void sensor::new_car_pulse()
   }
 }
 
-
+// Sensitive to new_car, inverts the signal 
+// for car and puts it on output
 void sensor::set_info()
 {
   car_signal = !car_signal;
