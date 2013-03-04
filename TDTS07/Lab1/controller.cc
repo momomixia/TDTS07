@@ -53,8 +53,9 @@ void controller::set_waiting_car_SN()
 void controller::calc_green()
 {
   for(;;){
-    wait(50, SC_MS); // wait to let simulation time go 
-    if(WE_car || EW_car){    //Check if there are waiting cars from east and west, enable green on appropriate light 
+    wait(50, SC_MS); // wait to let simulation time go
+    //Check if there are waiting cars from east and west, enable green on appropriate light 
+    if(WE_car || EW_car){   
       if(WE_car){
 	WE_green = true;
       }

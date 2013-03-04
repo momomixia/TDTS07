@@ -9,18 +9,29 @@
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}		% För svenska bokstäver
 \usepackage[swedish]{babel}
-\title{TDTS07 Lab-report 1}
+\usepackage{listings}
+
+
+\title{TDTS07 Lab Report 1}
 \author{Nora Björklund and Christopher Hallberg}
 \begin{document}
 \maketitle
-\section{Trafficlight}
+
+\section{Running the Simulation}
+All necessary code is submitted together with this report.
+To compile the code use the included makefile. Then to start the
+simulation run ''./trafficlight.x t input output'', where ''t'' is
+the simulation time in seconds, ''input'' the file specifying arriving
+cars and ''output'' the file where the results of the simulation is stored. 
+
+\section{Traffic-light}
 The traffic light consists of four sensors which are connected to a
 controller that can at the right moment give a green signal on a
 light where a car is waiting. The cars are generated from an input
 file which is read by the car generator, input\_gen. Which car is
 granted green light is read by the monitor that writes to an output
 file.
-\subsection{input\_gen}
+\subsection{Input Generator}
 The input generator simply reads a text document and inputs cars from
 north, south, east or west. The format of the input file is the
 letters W, E, S, or N followed by a space and then a time value in
@@ -28,30 +39,101 @@ seconds and finally completed with a newline. The letter indicates
 from what direction a car arrives and 
 the time value indicates how many seconds after the previous car a new 
 one will be generated.
-\subsection{sensor}
+\subsection{Sensor}
 The sensor detects when a car have arrived at its trafficlight and
 sends a signal to the controller that it has a car waiting. There is
 one sensor per direction.
-The sensors has an SC\_THREAD with a loop checking if there is a new
+The sensors has an SC\_THREAD with an infinite loop checking if there is a new
 car every 50 millisecond, any signal shorter than that is considered a
 glitch. If it detects a new car it raises an event
 which is detected by an SC\_METHOD. This method inverts an internal
 signal and puts it on the output for the controller. That is, both
 falling and rising edge of the signal between the sensors and
 controller indicates a new car.
-\subsection{controller}
+\subsection{Controller}
 The controller is the unit which decides what directions should be
 green. It is connected to the four sensors from which it receives
 signals telling it if new cars have arrived. There are four
 SC\_METHODs, one for each direction, which are sensitive to signals
-from the respective sensors. When a car is detected by a method a
-variable is set to indicate that a car is waiting at a specific light.
+from the respective sensors. When a car is detected by one of the
+methods a variable is set to indicate that a car is waiting at a
+specific light. 
 
+To calculate which lights should be green an SC\_THREAD consisting of
+an infinite loop is used. The thread first checks if there are waiting
+cars from west or east, then sets the light to green for the
+correct direction. Both lights are switched to green if they both have
+waiting cars, if only one direction have cars then only that direction
+will be switched to green. The light will be green for three seconds,
+after which the lights are set to red and the waiting car variables
+are reset to false. After checking east and west the thread then moves
+on to do the same thing for north and south.
+
+With this it can be seen that the lights work independently and that
+orthogonal directions cannot have green at the same time. Since all
+directions are checked for every loop iteration there is no
+starvation, a car will eventually get green light. It can also be seen
+that opposite directions can have green light at the same time if
+there are cars waiting when the light switches. However, if for
+example a car arrives from the north direction while the south
+direction has green light, it has to wait for the next iteration. 
+
+\subsection{Monitor}
+The monitor uses an SC\_METHOD sensitive to when the controller changes
+the status of the light. When a light is changed it reads the status
+of all the lights and prints it to an output file together with a time
+stamp. 
+
+\subsection{Traffic-light Testbench}
+The testbench is where the sc\_main is and where the different
+components are instantiated and connected together. 
+
+<<<<<<< HEAD
 \subsection{monitor}
 The monitor is  
+=======
+>>>>>>> cf9f9c0cb989fd917e4e8257a3eb3bc9cfba73f3
 \section{Tests}
-To verify that our traffic light is correct two different simulations
-have been executed. One to verify that every car is granted passage
-and one to see that a single car from one direction can dissappear when
-many arrives from.  
+To verify that the traffic light is correct different simulations
+have been executed.
+\subsection{Independence}
+This test is to verify that the opposite directions works
+independently of each other. To do this only one car from south is
+generated as can be seen in \ref{lst:indinput}. Note that the break
+is only there to prevent the last input line to be read twice which
+would be the case otherwise. Also, the breaking works with anything that
+is not N, S, W or E. 
+\lstinputlisting[caption={Independent Test Input},label={lst:indinput}]{ind_input}
+The output of the monitor is unfortunately too wide to fit nicely in
+this document, but it can be seen in the file ''ind\_output'' submitted
+together with this document. Every time the a light switches the
+current status of all lights are printed on one line, ''0'' means red and
+''1'' means green. It is clear that after 4.1 s only the south light turns
+green for three seconds. Hence, the light work independently.
+
+\subsection{Safety}
+This test verifies that the light cannot be green at the same time for
+two orthogonal directions. \ref{lst:safeinput} was used as input
+for the test. The output file is the one called ''safe\_output''.
+\lstinputlisting[caption={Safety Test Input},label={lst:safeinput}]{safe_input}
+The first car arrives from the north after one second, then directly
+after a car arrives from the east. Five seconds later a car arrives
+from the west at the same time as cars from both north and
+south. Looking in the output file it is clear that the orthogonal
+directions never have green light at the same time. As a side-note
+when cars from orthogonal directions arrive at the same time, the ones
+from north and south will have precedence because of the way the
+controller is written. 
+
+\subsection{Starvation}
+To make sure that a car arriving at a light will eventually get green
+light \ref{lst:starinput} was used. The result of the test is saved in the output
+file called ''star\_output''. 
+\lstinputlisting[caption={Starvation Test Input},label={lst:starinput}]{star_input}
+In this test there is a single car from the north in a steady stream
+of cars from the west. In the output file it can be seen that the car
+from the north is not starved and does not have to wait for a long
+time before its light turns green.
+
+
 \end{document}

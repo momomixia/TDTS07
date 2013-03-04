@@ -50,6 +50,9 @@ void generator::generate_output()
 	  wait(55 , SC_MS);
 	  SN_car = false;
 	  wait(SC_ZERO_TIME);
-	}
+	}else
+	{
+	  break;
+      }
     }
 }
