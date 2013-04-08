@@ -1,4 +1,3 @@
-
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: t
@@ -6,13 +5,13 @@
 
 \documentclass[12pt]{article}
 \usepackage{graphicx}
-\usepackage[T1]{fontenc}		% För svenska bokstäver
+\usepackage[T1]{fontenc}		% Fï¿½r svenska bokstï¿½ver
 \usepackage[swedish]{babel}
 \usepackage{listings}
 
 
 \title{TDTS07 Lab Report 1}
-\author{Nora Björklund and Christopher Hallberg}
+\author{Nora Bjï¿½rklund and Christopher Hallberg}
 \begin{document}
 \maketitle
 
@@ -29,7 +28,7 @@
     9  & 4 \\
     10 & 16 \\
     11 & 60 \\
-    12 & 240 \\
+    12 & 240 (?) \\
     \hline
   \end{tabular}
   \caption{Table for n instances of Fischer's mutual exclusion protocol }
@@ -40,7 +39,7 @@
 \section{Traffic Light Controller}
 The traffic light controller is implemented with a process P, and a timer. The timer have two states, one where it can let cars coming from north or south drive and one state when cars from east and west can drive and it changes when an invariant c is more than a certain number c1. When the timer changes state a synchronisation call is set, the invariant c is set to 0 and boolean assignments that north-south or west-east can drive or not.
 
-% Bild på timer
+% Bild pï¿½ timer
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{timer.png}
@@ -50,7 +49,7 @@ The traffic light controller is implemented with a process P, and a timer. The t
 
 The process P starts in an initial state, Red\_no\_car, where the system have no waiting cars. Incoming cars have a signal i, and if that signal is greator than or equal to 3 then the car is coming from the north or the south. If it is less than or equal to 2 then it is a car from either west or east. The  variable i is then used as an invariant placing the system in either state wait\_WE (waiting car from west or east) or in wait\_NS. Here the system synchronizes with the timer, so if a car from east is waiting for green then it has to wait for changeWE! to occur. When synched with the timer the system is in a state called green which represents that the car is given green and dissapears, we then once more wait to synchronize with the timer bringing the system back to the initial state. We have then created four instances of the process called N, S, W and E to represent the four directions.
 
-% Bild på P 
+% Bild pï¿½ P 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.7\textwidth]{trafficlight.png}
@@ -69,7 +68,7 @@ We verify the following on the system:
 \end{itemize}
 \section{Alternating Bit Protocol}
 The alternating bit protocol consists of three processes, a sender, a reciever and an unreliable channel and it works as explained in the lab tutorial. 
-% Bild på alla systemen :D
+% Bild pï¿½ alla systemen :D
 
 \begin{figure}[h!]
   \centering
