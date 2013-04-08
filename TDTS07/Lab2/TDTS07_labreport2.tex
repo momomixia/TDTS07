@@ -36,7 +36,7 @@
 \end{table}
 \section{Fischer part II}
 When changing value k to be larger than m, then it is possible to have two processes in the critical state cs at the same time. This happens when more than one process first moves to req and then one process moves to wait and then directly to cs. Then the process in the req state can move to wait and then to cs. Thus two processes will be in the critical region at the same time.
-The mutex requirement is fullfilled only when k is smaller or equal to m.
+The mutex requirement is fullfilled only when k is smaller or equal to m. When m is larger than k, a processes still in req when another process is in wait will be forced to move to wait before any processes in wait can move. This is due to the invariant on req being smaller than the guard on transition from wait to req.
 \section{Traffic Light Controller}
 The traffic light controller is implemented with a process P, and a timer. The timer have two states, one where it can let cars coming from north or south drive and one state when cars from east and west can drive and it changes when an invariant c is more than a certain number c1. When the timer changes state a synchronisation call is set, the invariant c is set to 0 and boolean assignments that north-south or west-east can drive or not.
 
