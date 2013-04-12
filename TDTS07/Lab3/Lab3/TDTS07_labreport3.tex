@@ -5,12 +5,8 @@
 
 \documentclass[a4paper, 12pt]{article}
 \usepackage{graphicx}
-<<<<<<< HEAD
 \usepackage{amsmath}
 \usepackage[T1]{fontenc}		% F�r svenska bokst�ver
-=======
-\usepackage[T1]{fontenc}		% För svenska bokstäver
->>>>>>> 188b8328f930d978b69d93f17e110cf13f5c535c
 \usepackage[swedish]{babel}
 \usepackage{listings}
 
@@ -30,17 +26,18 @@ proessors run at the same frequency and that the transfer time between
 them is zero.
 \begin{figure}[h]
   \centering
-  \usegraphics{taskSchedule.png}
+  \includegraphics{taskSchedule.png}
   \caption{Task schedule}
   \label{fig:schedule}
 \end{figure}
-
+ This can also be confirmed as the minimal execution time since worst
+ case propagation time is 35 ms. 
 
 \subsection{Extract execution times for the GSM codec}
 
 \begin{table}[h]
   \centering
-  \begin{tabular}{c c c}
+  \begin{tabular}{r c c}
     \hline
     Task & First run (cycles) & Second run (cycles) \\
     \hline
@@ -49,9 +46,18 @@ them is zero.
     Preprocess & 14480  & 14258  \\
     LPC\_Analysis & 51759  & 50138 \\
     ShortTermAnalysisFilter & 92101 & 92035 \\
-    LongTermPredictor2 & 64820, 66932, 66262, 66085 & 67037, 68269, 67599, 67093 \\
-    RPE_Encoding2 & 11552,10705,10667, 10675 & 11374,10632,10623,10666\\
-    Add2 & 1431,1319,1319,1319 & 1445,1319,1319, 1319\\
+    LongTermPredictor2 &64820&67037\\
+                       &66932&68269\\
+                       &66262&67599\\
+                       &66085&67093\\
+    RPE\_Encoding2 &11552&11374\\
+                   &10705&10632\\
+                   &10667&10623\\
+                   &10675&10666\\
+    Add2 &1431&1445\\
+         &1319&1319\\
+         &1319&1319\\
+         &1319&1319\\
     Encode & 3364 & 2818 \\
     Output & 3634 & 3522 \\
   \end{tabular}
@@ -61,15 +67,21 @@ them is zero.
 
 \begin{table}[h]
   \centering
-  \begin{tabular}{c c c}
+  \begin{tabular}{r c c}
     \hline
     Task & First run & Second run \\
     \hline
     Init & 6086 & X \\
     GetInputAudio &1151 & 1129\\
     Decode & 2722& 2540\\
-    RPE_Decoding2 & 2793, 3099, 3015,2979& 2232,3078,3015,2979\\
-    LongTermSynthesis2 &4790,4608, 4608,4580& 4608,4608,4608,4580 \\
+    RPE\_Decoding2 &2793&2232\\
+                   &3099&3078\\
+                   &3015&3015\\
+                   &2979&2979\\
+    LongTermSynthesis2 &4790&4608\\
+                       &4608&4608\\
+                       &4608&4608\\
+                       &4580&4580\\
     ShortTermAnalysisFilter & 109882 & 108185\\
     PostProcessing & 7470& 7106\\
     Output & 16631& 16575\\
