@@ -17,7 +17,39 @@
 
 
 \section{Simulation-based design space exploration for energy minimization}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c c c}
+    \hline
+    Data\$ & Instruction\$ & Freq. & Energy & Time \\
+    \hline
+    4096 4-way & 8192 direct & 1/(5ns) & 45uJ & 1.6ms \\
+    4096 4-way & 512 4-way & 1/(5ns) & 32uJ & 1.7ms \\
+    4096 4-way & 512 4-way & 1/(5ns*10) & 20uJ & 16ms \\
+    512 4-way & 512 2-way & 1/(5ns*5) & 18.7uJ & 8.3ms \\
+    512 4-way & 512 2-way & 1/(5ns*2) & 19.7uJ & 3.6ms \\
+    1024 4-way & 512 2-way & 1/(5ns*12) & 18.5uJ & 18.8ms \\
+    \hline
+    1024 2-way & 512 2-way & 1/(5ns*12) & 18.4uJ & 18.8ms \\
+  \end{tabular}
+  \caption{Configuration}
+  \label{fig:conf}
+\end{table}
+A selection of the tested configuration can be seen in table \ref{fig:conf}.
+The first line in the table is the default configuration and the last one the
+best one achieved. Several other configuration were also tried, but did not
+improve the result so the changes were reverted. The first thing tried was to
+reduce the cache sizes and try different associativity. This improved the energy
+efficiency considerably as long as the cache misses did not increase to much.
+Then because there was much time left frequency scaling was introduced. Using
+any sort of scaling improved the result, scaling further only made slight
+improvements. The most important thing to improve was the caches. 
+
 \section{Communication in MPSoCs}
+The result of this assignment is divided in two parts
+\subsection{Comparison of scratchpad and shared memory}
+
 \section{Mapping and Scheduling}
 \subsection{Scheduling exercise}
 \subsection{Extract execution times for the GSM codec}
