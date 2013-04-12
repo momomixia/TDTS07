@@ -5,6 +5,7 @@
 
 \documentclass[12pt]{article}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \usepackage[T1]{fontenc}		% F�r svenska bokst�ver
 \usepackage[swedish]{babel}
 \usepackage{listings}
@@ -19,6 +20,17 @@
 \section{Communication in MPSoCs}
 \section{Mapping and Scheduling}
 \subsection{Scheduling exercise}
+In this assignment, since nothing else was given we assume that the
+proessors run at the same frequency and that the transfer time between
+them is zero.
+\begin{figure}[h]
+  \centering
+  \usegraphics{taskSchedule.png}
+  \caption{Task schedule}
+  \label{fig:schedule}
+\end{figure}
+
+
 \subsection{Extract execution times for the GSM codec}
 
 \begin{table}[h]
@@ -32,9 +44,9 @@
     Preprocess & 14480  & 14258  \\
     LPC_Analysis & 51759  & 50138 \\
     ShortTermAnalysisFilter & 92101 & 92035 \\
-    LongTermPredictor2 & 64820 + 66932 + 66262 + 66085 & 67037 + 68269 + 67599 + 67093 \\
-    RPE_Encoding2 & 11552 + 10705 + 10667 + 10675 & 11374 + 10632 + 10623 + 10666\\
-    Add2 & 1431 + 1319 + 1319 + 1319 & 1445 + 1319 + 1319 + 1319\\
+    LongTermPredictor2 & 64820, 66932, 66262, 66085 & 67037, 68269, 67599, 67093 \\
+    RPE_Encoding2 & 11552,10705,10667, 10675 & 11374,10632,10623,10666\\
+    Add2 & 1431,1319,1319,1319 & 1445,1319,1319, 1319\\
     Encode & 3364 & 2818 \\
     Output & 3634 & 3522 \\
   \end{tabular}
@@ -49,13 +61,13 @@
     Task & First run & Second run \\
     \hline
     Init & 6086 & X \\
-    GetInputAudio & & \\
-    Decode & & \\
-    RPE_Decoding2 & & \\
-    LongTermSynthesis2 & & \\
-    ShortTermAnalysisFilter & & \\
-    PostProcessing & & \\
-    Output & & \\
+    GetInputAudio &1151 & 1129\\
+    Decode & 2722& 2540\\
+    RPE_Decoding2 & 2793, 3099, 3015,2979& 2232,3078,3015,2979\\
+    LongTermSynthesis2 &4790,4608, 4608,4580& 4608,4608,4608,4580 \\
+    ShortTermAnalysisFilter & 109882 & 108185\\
+    PostProcessing & 7470& 7106\\
+    Output & 16631& 16575\\
   \end{tabular}
   \caption{Execution times for GSM Decoder}
 \end{table}
