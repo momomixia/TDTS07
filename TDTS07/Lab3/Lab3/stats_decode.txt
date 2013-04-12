@@ -1,0 +1,270 @@
+-----------------------
+Task 1
+Interconnect statistics
+-----------------------
+Overall exec time          = 6086 system cycles (30430 ns)
+Task NC  			= 6086
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 6086 system cycles (30430 ns)
+Bus busy                   = 2469 system cycles (40.57% of 6086)
+Bus transferring data      = 1005 system cycles (16.51% of 6086, 40.70% of 2469)
+-----------------------
+Task 2
+Interconnect statistics
+-----------------------
+Overall exec time          = 7237 system cycles (36185 ns)
+Task NC  			= 1151
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 7237 system cycles (36185 ns)
+Bus busy                   = 2814 system cycles (38.88% of 7237)
+Bus transferring data      = 1134 system cycles (15.67% of 7237, 40.30% of 2814)
+-----------------------
+Task 3
+Interconnect statistics
+-----------------------
+Overall exec time          = 9959 system cycles (49795 ns)
+Task NC  			= 2722
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 9959 system cycles (49795 ns)
+Bus busy                   = 4071 system cycles (40.88% of 9959)
+Bus transferring data      = 1655 system cycles (16.62% of 9959, 40.65% of 4071)
+-----------------------
+Task 4
+Interconnect statistics
+-----------------------
+Overall exec time          = 12752 system cycles (63760 ns)
+Task NC  			= 2793
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 12752 system cycles (63760 ns)
+Bus busy                   = 4902 system cycles (38.44% of 12752)
+Bus transferring data      = 2000 system cycles (15.68% of 12752, 40.80% of 4902)
+-----------------------
+Task 5
+Interconnect statistics
+-----------------------
+Overall exec time          = 17542 system cycles (87710 ns)
+Task NC  			= 4790
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 17542 system cycles (87710 ns)
+Bus busy                   = 6150 system cycles (35.06% of 17542)
+Bus transferring data      = 2443 system cycles (13.93% of 17542, 39.72% of 6150)
+-----------------------
+Task 6
+Interconnect statistics
+-----------------------
+Overall exec time          = 20641 system cycles (103205 ns)
+Task NC  			= 3099
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 20641 system cycles (103205 ns)
+Bus busy                   = 6852 system cycles (33.20% of 20641)
+Bus transferring data      = 2704 system cycles (13.10% of 20641, 39.46% of 6852)
+-----------------------
+Task 7
+Interconnect statistics
+-----------------------
+Overall exec time          = 25249 system cycles (126245 ns)
+Task NC  			= 4608
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 25249 system cycles (126245 ns)
+Bus busy                   = 7983 system cycles (31.62% of 25249)
+Bus transferring data      = 3095 system cycles (12.26% of 25249, 38.77% of 7983)
+-----------------------
+Task 8
+Interconnect statistics
+-----------------------
+Overall exec time          = 28264 system cycles (141320 ns)
+Task NC  			= 3015
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 28264 system cycles (141320 ns)
+Bus busy                   = 8631 system cycles (30.54% of 28264)
+Bus transferring data      = 3332 system cycles (11.79% of 28264, 38.61% of 8631)
+-----------------------
+Task 9
+Interconnect statistics
+-----------------------
+Overall exec time          = 32872 system cycles (164360 ns)
+Task NC  			= 4608
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 32872 system cycles (164360 ns)
+Bus busy                   = 9762 system cycles (29.70% of 32872)
+Bus transferring data      = 3723 system cycles (11.33% of 32872, 38.14% of 9762)
+-----------------------
+Task 10
+Interconnect statistics
+-----------------------
+Overall exec time          = 35851 system cycles (179255 ns)
+Task NC  			= 2979
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 35851 system cycles (179255 ns)
+Bus busy                   = 10386 system cycles (28.97% of 35851)
+Bus transferring data      = 3949 system cycles (11.02% of 35851, 38.02% of 10386)
+-----------------------
+Task 11
+Interconnect statistics
+-----------------------
+Overall exec time          = 40431 system cycles (202155 ns)
+Task NC  			= 4580
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 40431 system cycles (202155 ns)
+Bus busy                   = 11499 system cycles (28.44% of 40431)
+Bus transferring data      = 4332 system cycles (10.71% of 40431, 37.67% of 11499)
+-----------------------
+Task 12
+Interconnect statistics
+-----------------------
+Overall exec time          = 150313 system cycles (751565 ns)
+Task NC  			= 109882
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 150313 system cycles (751565 ns)
+Bus busy                   = 28596 system cycles (19.02% of 150313)
+Bus transferring data      = 10297 system cycles (6.85% of 150313, 36.01% of 28596)
+-----------------------
+Task 13
+Interconnect statistics
+-----------------------
+Overall exec time          = 157783 system cycles (788915 ns)
+Task NC  			= 7470
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 157783 system cycles (788915 ns)
+Bus busy                   = 29412 system cycles (18.64% of 157783)
+Bus transferring data      = 10602 system cycles (6.72% of 157783, 36.05% of 29412)
+-----------------------
+Task 14
+Interconnect statistics
+-----------------------
+Overall exec time          = 174414 system cycles (872070 ns)
+Task NC  			= 16631
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 174414 system cycles (872070 ns)
+Bus busy                   = 32973 system cycles (18.91% of 174414)
+Bus transferring data      = 11805 system cycles (6.77% of 174414, 35.80% of 32973)
+-----------------------
+Task 15
+Interconnect statistics
+-----------------------
+Overall exec time          = 175543 system cycles (877715 ns)
+Task NC  			= 1129
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 175543 system cycles (877715 ns)
+Bus busy                   = 33300 system cycles (18.97% of 175543)
+Bus transferring data      = 11926 system cycles (6.79% of 175543, 35.81% of 33300)
+-----------------------
+Task 16
+Interconnect statistics
+-----------------------
+Overall exec time          = 178083 system cycles (890415 ns)
+Task NC  			= 2540
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 178083 system cycles (890415 ns)
+Bus busy                   = 34440 system cycles (19.34% of 178083)
+Bus transferring data      = 12395 system cycles (6.96% of 178083, 35.99% of 34440)
+-----------------------
+Task 17
+Interconnect statistics
+-----------------------
+Overall exec time          = 180315 system cycles (901575 ns)
+Task NC  			= 2232
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 180315 system cycles (901575 ns)
+Bus busy                   = 34914 system cycles (19.36% of 180315)
+Bus transferring data      = 12581 system cycles (6.98% of 180315, 36.03% of 34914)
+-----------------------
+Task 18
+Interconnect statistics
+-----------------------
+Overall exec time          = 184923 system cycles (924615 ns)
+Task NC  			= 4608
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 184923 system cycles (924615 ns)
+Bus busy                   = 36045 system cycles (19.49% of 184923)
+Bus transferring data      = 12972 system cycles (7.01% of 184923, 35.99% of 36045)
+-----------------------
+Task 19
+Interconnect statistics
+-----------------------
+Overall exec time          = 188001 system cycles (940005 ns)
+Task NC  			= 3078
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 188001 system cycles (940005 ns)
+Bus busy                   = 36729 system cycles (19.54% of 188001)
+Bus transferring data      = 13225 system cycles (7.03% of 188001, 36.01% of 36729)
+-----------------------
+Task 20
+Interconnect statistics
+-----------------------
+Overall exec time          = 192609 system cycles (963045 ns)
+Task NC  			= 4608
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 192609 system cycles (963045 ns)
+Bus busy                   = 37860 system cycles (19.66% of 192609)
+Bus transferring data      = 13616 system cycles (7.07% of 192609, 35.96% of 37860)
+-----------------------
+Task 21
+Interconnect statistics
+-----------------------
+Overall exec time          = 195624 system cycles (978120 ns)
+Task NC  			= 3015
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 195624 system cycles (978120 ns)
+Bus busy                   = 38499 system cycles (19.68% of 195624)
+Bus transferring data      = 13849 system cycles (7.08% of 195624, 35.97% of 38499)
+-----------------------
+Task 22
+Interconnect statistics
+-----------------------
+Overall exec time          = 200232 system cycles (1001160 ns)
+Task NC  			= 4608
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 200232 system cycles (1001160 ns)
+Bus busy                   = 39630 system cycles (19.79% of 200232)
+Bus transferring data      = 14240 system cycles (7.11% of 200232, 35.93% of 39630)
+-----------------------
+Task 23
+Interconnect statistics
+-----------------------
+Overall exec time          = 203211 system cycles (1016055 ns)
+Task NC  			= 2979
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 203211 system cycles (1016055 ns)
+Bus busy                   = 40254 system cycles (19.81% of 203211)
+Bus transferring data      = 14466 system cycles (7.12% of 203211, 35.94% of 40254)
+-----------------------
+Task 24
+Interconnect statistics
+-----------------------
+Overall exec time          = 207791 system cycles (1038955 ns)
+Task NC  			= 4580
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 207791 system cycles (1038955 ns)
+Bus busy                   = 41367 system cycles (19.91% of 207791)
+Bus transferring data      = 14849 system cycles (7.15% of 207791, 35.90% of 41367)
+-----------------------
+Task 25
+Interconnect statistics
+-----------------------
+Overall exec time          = 315976 system cycles (1579880 ns)
+Task NC  			= 108185
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 315976 system cycles (1579880 ns)
+Bus busy                   = 57231 system cycles (18.11% of 315976)
+Bus transferring data      = 20266 system cycles (6.41% of 315976, 35.41% of 57231)
+-----------------------
+Task 26
+Interconnect statistics
+-----------------------
+Overall exec time          = 323082 system cycles (1615410 ns)
+Task NC  			= 7106
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 323082 system cycles (1615410 ns)
+Bus busy                   = 57813 system cycles (17.89% of 323082)
+Bus transferring data      = 20467 system cycles (6.33% of 323082, 35.40% of 57813)
+-----------------------
+Task 27
+Interconnect statistics
+-----------------------
+Overall exec time          = 339657 system cycles (1698285 ns)
+Task NC  			= 16575
+1-CPU average exec time    = 0 system cycles (0 ns)
+Concurrent exec time       = 339657 system cycles (1698285 ns)
+Bus busy                   = 61338 system cycles (18.06% of 339657)
+Bus transferring data      = 21654 system cycles (6.38% of 339657, 35.30% of 61338)
