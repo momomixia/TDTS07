@@ -6,13 +6,13 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage[T1]{fontenc}		% F�r svenska bokst�ver
-\usepackage[swedish]{babel}
+%\usepackage[T1]{fontenc}		% F�r svenska bokst�ver
+%\usepackage[swedish]{babel}
 \usepackage{listings}
 
 
 \title{TDTS07 Lab Report 3}
-\author{Nora Björklund and Christopher Hallberg}
+\author{Nora Bjorklund and Christopher Hallberg}
 \begin{document}
 \maketitle
 
@@ -33,6 +33,7 @@
     1024 4-way & 512 2-way & 1/(5ns*12) & 18.5uJ & 18.8ms \\
     \hline
     1024 2-way & 512 2-way & 1/(5ns*12) & 18.4uJ & 18.8ms \\
+    \hline
   \end{tabular}
   \caption{Configuration}
   \label{fig:conf}
@@ -51,10 +52,30 @@ improvements. The most important thing to improve was the caches.
 The result of this assignment is divided in two parts
 \subsection{Comparison of scratchpad and shared memory}
 
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c | c c}
+    \hline
+    Statistics & Scratchpad & Shared \\
+    \hline
+    Execution time & 10ms & 14ms \\
+    Concurrent execution time & 6.6ms & 10ms \\
+    Bus busy \% & 56.25\% & 44.89\% \\
+    Bus accesses P0 & 73244 & 141450 \\
+    Bus accesses P1 & 119954 & 103202 \\
+    Bus accesses P2 & 120568 & 139390  \\
+    \hline    
+  \end{tabular}
+  \caption{Comparison}
+  \label{fig:comparison}
+\end{table}
+The relevant statistics are presented in table \ref{fig:comparison}. It can be
+seen that with the default configuration, the scratchpad have better
+performance.
 \section{Mapping and Scheduling}
 \subsection{Scheduling exercise}
 In this assignment, since nothing else was given we assume that the
-proessors run at the same frequency and that the transfer time between
+processors run at the same frequency and that the transfer time between
 them is zero.
 \begin{figure}[h]
   \centering
