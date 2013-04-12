@@ -12,7 +12,7 @@
 
 
 \title{TDTS07 Lab Report 3}
-\author{Nora Björklund and Christopher Hallberg}
+\author{Nora Bjorklund and Christopher Hallberg}
 \begin{document}
 \maketitle
 
@@ -51,6 +51,33 @@ improvements. The most important thing to improve was the caches.
 The result of this assignment is divided in two parts
 \subsection{Comparison of scratchpad and shared memory}
 
+\subsection{Reduce traffic on interconnects}
+To reduce traffic on the interconnects, a method of scaling the
+frequency on the three different processors have been used. As seen in
+table \ref{tab:busbusy} scaling the frecuency more than 2 times on all three
+processors will increase the bus traffic while scaling of the bus will
+increase the bus traffic substantially.
+\begin{table}[h]
+  \centering
+  \begin{tabular}[c]{r | c}
+    Frequency scaling   & Bus Busy (cycles)\\
+    \hline
+    F0,1 F1,1 F2,1 F3,1 & 925438\\
+    F0,2 F1,1 F2,1 F3,1 & 988834\\
+    F0,2 F1,1 F2,2 F3,1 & 986636\\
+    F0,1 F1,2 F2,2 F3,1 & 948660\\
+    \textbf{F0,2 F1,2 F2,2 F3,1} & \textbf{867259}\\
+    F0,3 F1,2 F2,2 F3,1 & 883464\\
+    F0,2 F1,2 F2,2 F3,2 & 1850876\\
+    F0,2 F1,3 F2,2 F3,1 & < 880000\\
+    F0,2 F1,3 F2,3 F3,1 & < 880000\\
+    F0,3 F1,3 F2,3 F3,1 & < 879000\\
+    F0,2 F1,2 F2,3 F3,1 & < 890000\\
+  \end{tabular}
+  \caption{Bus busy in a shared memory structure running on 3 processors}
+  \label{tab:busbusy}
+\end{table}
+
 \section{Mapping and Scheduling}
 \subsection{Scheduling exercise}
 In this assignment, since nothing else was given we assume that the
@@ -66,7 +93,8 @@ them is zero.
  case propagation time is 35 ms. 
 
 \subsection{Extract execution times for the GSM codec}
-
+In table \ref{fig:encode} and \ref{fig:decode} the extracted execution
+times of each task is shown. 
 \begin{table}[h]
   \centering
   \begin{tabular}{r c c}
@@ -94,6 +122,7 @@ them is zero.
     Output & 3634 & 3522 \\
   \end{tabular}
   \caption{Execution times for GSM Encoder}
+  \label{fig:encode}
 \end{table}
 
 
@@ -119,6 +148,7 @@ them is zero.
     Output & 16631& 16575\\
   \end{tabular}
   \caption{Execution times for GSM Decoder}
+  \label{fig:decode}
 \end{table}
 
 
