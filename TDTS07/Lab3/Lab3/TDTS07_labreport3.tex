@@ -1,0 +1,64 @@
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}		% F�r svenska bokst�ver
+\usepackage[swedish]{babel}
+\usepackage{listings}
+
+
+\title{TDTS07 Lab Report 3}
+\author{Nora Bj�rklund and Christopher Hallberg}
+\begin{document}
+\maketitle
+
+\section{Simulation-based design space exploration for energy minimization}
+\section{Communication in MPSoCs}
+\section{Mapping and Scheduling}
+\subsection{Scheduling exercise}
+\subsection{Extract execution times for the GSM codec}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c}
+    \hline
+    Task & First run (cycles) & Second run (cycles) \\
+    \hline
+    Init & 6002  & X \\
+    GetInputAudio & 4576  & 4726 \\
+    Preprocess & 14480  & 14258  \\
+    LPC_Analysis & 51759  & 50138 \\
+    ShortTermAnalysisFilter & 92101 & 92035 \\
+    LongTermPredictor2 & 64820 + 66932 + 66262 + 66085 & 67037 + 68269 + 67599 + 67093 \\
+    RPE_Encoding2 & 11552 + 10705 + 10667 + 10675 & 11374 + 10632 + 10623 + 10666\\
+    Add2 & 1431 + 1319 + 1319 + 1319 & 1445 + 1319 + 1319 + 1319\\
+    Encode & 3364 & 2818 \\
+    Output & 3634 & 3522 \\
+  \end{tabular}
+  \caption{Execution times for GSM Encoder}
+\end{table}
+
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c}
+    \hline
+    Task & First run & Second run \\
+    \hline
+    Init & 6086 & X \\
+    GetInputAudio & & \\
+    Decode & & \\
+    RPE_Decoding2 & & \\
+    LongTermSynthesis2 & & \\
+    ShortTermAnalysisFilter & & \\
+    PostProcessing & & \\
+    Output & & \\
+  \end{tabular}
+  \caption{Execution times for GSM Decoder}
+\end{table}
+
+
+\end{document}
